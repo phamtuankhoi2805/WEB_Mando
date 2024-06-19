@@ -1,0 +1,74 @@
+
+<link rel="stylesheet" href="css/danhMuc.css">
+
+
+<div ng-include="'modun/duongDan.html'"></div>
+   <!-- img -->
+   <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="anhDanhMuc">
+          <img src="{{hinhDM}}" alt="2" class="img-fluid" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end img -->
+  <!-- sản phẩm  -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="danhMuc col-md-3 col-sm-12 col-xs-12 sidebar-fix" id="danhMuc">
+        <ul class="nav flex-column" ng-repeat="dm in dsDanhMuc">
+      
+          <li class="nav-item">
+            <a class="nav-link" href="#!danhMuc" ng-click="loadDM(dm)">{{dm.tenDanhMuc}}</a>
+          </li>
+
+        </ul>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <input ng-model="sortDirection" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="false" ng-change="giaTang()">
+          <label class="btn btn-outline-primary" for="btnradio1">Tăng Dần</label>
+        
+          <input ng-model="sortDirection" type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" value="true" ng-change="giaGiam()">
+          <label class="btn btn-outline-primary" for="btnradio2"> Giảm Dần</label>
+        </div>
+      </div>
+      
+      <div class="SanPhamDanhMuc col-9 bg-dark-subtle">
+        <h4>{{currentDanhMuc}}</h4>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6 mb-4" ng-repeat="product in loaiDM | limitTo:limit:start" >
+      
+            <a href="#!chiTietSanPham" class="product-link" ng-click="loadSanPham(product)">
+              <div class="card">
+                <div class="product-label">-44%</div>
+                <img src="{{product.hinhAnh[0]}}" class="card-img-top" alt="{{product.tenSanPham}}">
+                <div class="card-body">
+                  <p class="card-title">{{product.tenSanPham}}</p>
+                  <p class="card-text">{{product.giaBan}} VND</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <nav aria-label="Product Pagination" style="margin-left: 38%;" ng-if="loaiDM.length != 0">
+          <ul class="pagination">
+            <li class="page-item" ng-class="{ 'disabled': selectedPage == 1 }">
+              <a class="page-link" ng-click="trangTruoc()">Previous</a>
+            </li>
+            <li class="page-item" ng-repeat="pageNum in getTotalPages()" ng-class="{ 'active': selectedPage == pageNum }">
+              <a class="page-link" ng-click="phanTrang(pageNum)">{{ pageNum }}</a>
+            </li>
+            <li class="page-item" ng-class="{ 'disabled': page == tongSoTrang }">
+              <a class="page-link" ng-click="trangSau()">Next</a>
+            </li>
+          </ul>
+        </nav>
+      
+    
+      </div>
+   
+  </div>
+  </div>
+
+

@@ -1,0 +1,388 @@
+body {
+    background-color: black;
+    color: #fff;
+    display:flex;
+    justify-content: center;
+  }
+  a{
+    color: white !important;
+  }
+  .carousel{
+     margin-top:20px;
+    }
+  .navbar.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .navbar-nav {
+    margin-left: 30%;
+  }
+  .icon_dangNhap {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .icon_gioHang {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .icon_timKiem {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .icon_gioHang .badge {
+    position: absolute;
+    top: -6px;
+    right: 25px;
+    font-size: 10px;
+  }
+  
+  .line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #00CCFF; /* Màu sáng của line */
+  }
+  
+  .sanPhamGioHang {
+    display: inline-block;
+    right: 0px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .sanPhamGioHang img {
+    margin-right: 10px;
+  }
+  
+  .ten {
+    margin-right: 120px;
+  }
+  
+  .sanPhamGioHang .gia {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    font-weight: bold;
+  }
+  
+  .sanPhamGioHang .btn-xoaSP {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    bottom: 0px;
+    right: 60%;
+  }
+  
+  .sanPhamGioHang .soLuong {
+    position: absolute;
+    bottom: 33px;
+    left: 125px;
+    font-weight: bold;
+  }
+  
+  .sanPhamGioHang .size {
+    position: absolute;
+    bottom: 10px;
+    left: 125px;
+    font-weight: bold;
+  }
+  
+  // ô in put
+  .inputGroup {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    max-width: 190px;
+    position: relative;
+  }
+  
+  .inputGroup input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 20px;
+    width: 100%;
+  }
+  
+  .inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(100, 100, 100);
+  }
+  
+  .inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+  }
+  
+  .inputGroup :is(input:focus, input:valid) {
+    border-color: rgb(150, 150, 200);
+  }
+  //end input
+  // chi tiet sản phẩm ----------------------------------------------------------------
+
+  // footer ------------------------
+  footer{
+    background-color: #444444;
+  
+  }
+  .top-footer {
+    background-color: #f5f5f5;
+    padding: 50px 0;
+  }
+  
+  .area_newsletter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .title_newsletter {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .title_newsletter i {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .input-vip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input-email {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 50%;
+    margin-right: 10px;
+  }
+  
+  .btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn-submit:hover {
+    background-color: #0056b3;
+  }
+  .input-vip p {
+    font-size: 14px;
+    color: #666;
+    margin-left: 10px;
+  }
+  #con{
+    margin-top: 50px;
+  }
+  .footer-block li a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .fb-page-container {
+    width: 300px;
+    height: 130px;
+    overflow: hidden;
+  }
+  
+  .fb-page {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  // end footer ------------------------
+/* sap xep */
+.tangGiam {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .tangGiam h3 {
+    margin: 0;
+  }
+  
+  .tangGiam .btn {
+    margin-left: 10px;
+  }
+
+  // Gio Hàng --------------------------------
+  .pd-page {
+    margin-top: 50px;
+    padding: 50px 0;
+  }
+  
+  .heading-page {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .header-page h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0; /* Thêm dòng này */
+    margin-bottom: 10px;
+  }
+  
+  .count-cart {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .count-cart span {
+    font-weight: bold;
+  }
+  
+  .wrapbox-content-cart {
+
+    padding: 20px;
+  }
+  // san pham gio hàng
+  .wrapbox-content-cart {
+    margin-bottom: 50px;
+  }
+  
+  .cart-container {
+    border: 1px solid #e5e5e5;
+    padding: 30px;
+  }
+  
+  .cart-col-left {
+    width: 100%;
+  }
+  
+  .table-cart {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-cart th {
+    text-align: left;
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .table-cart td {
+    padding: 25px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .table-cart .image {
+    width: 120px;
+  }
+  
+  .table-cart .item {
+    width: 70%;
+  }
+  
+  .table-cart .remove {
+    width: 50px;
+    text-align: right;
+  }
+  
+  .table-cart .product_image img {
+    max-width: 120px;
+  }
+  
+  .table-cart h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  
+  .table-cart p {
+    margin-bottom: 8px;
+  }
+  
+  .table-cart .variant_title {
+    font-weight: bold;
+  }
+  
+  .qty-click {
+    display: flex;
+    align-items: center;
+  }
+  
+  .qty-btn {
+    background-color: #f2f2f2;
+    border: none;
+    padding: 7px 12px;
+    cursor: pointer;
+  }
+  
+  .item-quantity {
+    width: 60px;
+    text-align: center;
+    margin: 0 12px;
+  }
+  
+  .price .text {
+    font-weight: bold;
+    margin-right: 12px;
+  }
+  
+  .checkout-note {
+    margin-bottom: 25px;
+  }
+  
+  .order-infor {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  
+  .cart-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button.dark {
+    background-color: #333;
+  }
+  
+  .button.link-continue i {
+    margin-right: 7px;
+    f
+  }

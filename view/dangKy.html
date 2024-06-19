@@ -1,0 +1,46 @@
+
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+
+  <!-- Đăng nhập -->
+<div class="container-fluid" style="width: 100%; margin-top: 100px; ">
+
+<!-- HTML -->
+<div class="container mt-5">
+  <!-- Form đăng ký -->
+  <div class="row justify-content-center" id="registerContainer">
+    <div class="col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Đăng ký</h2>
+          <form id="registerForm" ng-submit="dangKy()">
+            <div class="mb-3">
+              <label for="registerPhone" class="form-label">Số điện thoại</label>
+              <input type="tel" class="form-control" id="registerPhone"  required>
+            </div>
+            <div ng-if="registerError" class="alert alert-danger">{{ registerError }}</div>
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Mật khẩu</label>
+              <input type="password" class="form-control" id="registerPassword" ng-model="registerPassword" required>
+            </div>
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Nhập lại mật khẩu</label>
+              <input type="password" class="form-control" id="confirmPassword" ng-model="confirmPassword" required>
+            </div>
+            <div class="row mb-3">
+              <div class="col-12">
+                <label for="registerAddress" class="form-label">Địa chỉ </label>
+                <input type="text" class="form-control" id="registerAddress" ng-model="registerAddress" required>
+              </div>
+            </div>
+          
+            <div class="d-grid gap-2 mb-3">
+              <button type="submit" class="btn btn-primary" ng-click="dangKy()">Đăng ký</button>
+              <a href="#!dangNhap" class="btn btn-secondary login-btn">Đăng nhập</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,130 @@
+
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+  <div class="container-fluid d-flex">
+    <img src="img/logo.png" class="img-fluid rounded-top" width="5%" alt="" />
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#!">Trang Chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!gioiThieu">Giới Thiệu</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Danh Mục
+          </a>
+          <ul class="dropdown-menu">
+            <li ng-repeat="dm in dsDanhMuc">
+              <a class="dropdown-item" href="#!danhMuc" ng-click="loadDM(dm)" >{{dm.tenDanhMuc}}</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-disabled="true" >Sản Phẩm Mới 2024</a>
+        </li>
+      </ul>
+      <button class="icon_gioHang" aria-expanded="false" data-bs-toggle="offcanvas" data-bs-target="#demo" >
+        <i class="fas fa-shopping-cart"></i>
+        <span class="badge bg-danger">{{soLuong}}</span> <!-- Số lượng sản phẩm trong giỏ hàng -->
+      </button>
+      <button class="icon_timKiem" aria-expanded="false" data-bs-toggle="offcanvas" data-bs-target="#demo2">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <a href="#!dangNhap">
+        <button  class="icon_dangNhap" aria-expanded="false">
+        <i class="fa-solid fa-user"></i>
+      </button>
+    </a>
+    </div>
+  </div>
+</nav>
+ <!-- giỏ hàng -->
+<div id="demo" class="offcanvas offcanvas-end">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Giỏ hàng</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="sanPhamGioHang mb-4" ng-if="cart.length === 0">
+      <p>Hiện chưa có sản phẩm trong giỏ hàng.</p>
+    </div>
+    
+    <div class="sanPhamGioHang mb-4"ng-repeat="SPGH in cart track by SPGH.id">
+      <div class="row">
+        <div class="col-3">
+          <img src="{{SPGH.hinhAnh}}" class="img-fluid rounded" alt="" />
+        </div>
+        <div class="col-9 d-flex flex-column justify-content-between">
+          <div>
+            <p class="h5 mb-0">{{SPGH.tenSP}}</p>
+            <div class="d-flex align-items-center">
+              <span class="me-2">Size:</span>
+              <span class="badge rounded-pill bg-primary"> {{SPGH.size}}</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <span class="me-2">Màu sắc:</span>
+              <span class="badge rounded-pill bg-secondary"> {{SPGH.color}}</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <span class="me-2">Số lượng:</span>
+              <span> {{SPGH.quantity}}</span>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <p class="h5 mb-0">{{SPGH.giaSP|currency:"VND ":0}}</p>
+            <button type="button" class="btn btn-danger btn-sm" ng-click="xoaSanPham($index)"><i class="fa fa-trash"></i>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+    </div>
+    
+    <div class="d-grid gap-2 d-md-block justify-content-center">
+      <a class="btn btn-primary w-100" href="#!gioHang" type="button">Xem Giỏ Hàng</a>
+    </div>
+  </div>
+</div>
+ <!-- tìm kiếm  -->
+ <div id="demo2" class="offcanvas offcanvas-end">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Tìm Kiếm</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="inputGroup">
+      <input type="text" required="" autocomplete="off" ng-model="searchTerm" ng-change="loadProducts()">
+      <label for="timKiem">Tìm Kiếm</label>
+    </div>
+    <br>
+    <span class="line"></span> <br>
+    <div ng-if="searchTerm.length > 0">
+      <div class="row" ng-repeat="product in dsSP | filter:searchTerm" ng-click="loadSanPham(product)">
+        <a href="#!chiTietSanPham" class="product-link">
+          <div class="row">
+            <div class="col-3">
+              <img src="{{product.hinhAnh[0]}}" class="img-fluid rounded" alt="" />
+            </div>
+            <div class="col-9 d-flex flex-column justify-content-between">
+              <div>
+                <p class="h5 mb-0">{{product.tenSanPham}}</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="h5 mb-0">{{product.giaBan | currency:"VND ":0}} </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <hr>
+      </div>
+    </div>
+    <div ng-if="searchTerm.length === 0">
+      <p>Vui lòng nhập từ khóa để tìm kiếm sản phẩm.</p>
+    </div>
+  </div>
+</div>

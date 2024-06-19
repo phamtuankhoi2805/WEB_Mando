@@ -1,0 +1,158 @@
+
+<link rel="stylesheet" href="css/trangChu.css">
+   <!-- carosel -->
+   <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="https://theme.hstatic.net/1000401164/1000509982/14/slideshow_1.jpg?v=815" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="https://theme.hstatic.net/1000401164/1000509982/14/slideshow_2.jpg?v=815" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- end caro -->
+
+  <!-- danh mục SP -->
+   <div class="container-fluid">
+
+    <div class="danhMucSanPham text-center" id="danhMucSanPham"> <h2 class="h2-danhmuc">Danh Mục Sản Phẩm</h2></div>
+    <div class="container-fluid">
+      <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-4 position-relative" ng-repeat="dm in dsDanhMuc | limitTo:limitDM:startDM">
+                <a href="#!danhMuc" ng-click="loadDM(dm)">
+                  <img src="{{dm.hinhAnh}}" class="d-block w-100" alt="Product {{$index+1}}">
+                </a>
+                <p>{{dm.tenDanhMuc}}</p>
+              </div>
+            </div>
+          </div>
+          <!-- Add more carousel items if needed -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#!chiTietSanPhamproductCarousel" ng-click="nextPage()" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-black" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#!chiTietSanPhamproductCarousel" ng-click="prevPage()" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-black" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  
+     </div>
+
+
+   </div>
+  <!-- end danhmuc -->
+
+ <!-- Sản phẩm mới -->
+<div class="danhMucSanPham text-center" id="danhMucSanPham" >
+  <h2 class="h2-danhmuc">Sản Phẩm Mới 2024</h2>
+  <div class="row">
+    <div class="col-3 position-relative" ng-repeat="sp in dsSP | limitTo:4:0">
+      <div class="product" ng-click="loadSanPham(sp)">
+        <a href="#!chiTietSanPham">
+          <img src="{{sp.hinhAnh[0]}}" style="width: 100%;" alt="Product 1">
+          <p id="product-name">{{sp.tenSanPham}}</p>
+          <p id="price">{{sp.giaBan | number}} VND</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Kết thúc sản phẩm mới -->
+<!-- nhóm 2 -->
+<div class="container-fluid">
+<div class="row">
+  <div class="col-4 home-banner-pd site-animation">
+    <div class="block-banner-category"> 
+      <a class="link-banner" href="#!danhMuc" ng-click="loadDM(dsDanhMuc[0])">
+        <img src="https://theme.hstatic.net/1000401164/1000509982/14/block_home_category1.jpg?v=815" alt="BST ÁO PHÔNG">
+      </a>		
+      <div class="caption_banner">
+        <span class="subtitle"></span>
+        <h3>BST SƠ MI</h3>
+        
+        <a class="button" href="#!danhMuc" ng-click="loadDM(dsDanhMuc[0])">Xem thêm</a>
+                  
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4 home-banner-pd ">
+    <div class="block-banner-category"> 
+      <a class="link-banner" href="#!danhMuc" ng-click="loadDM(dsDanhMuc[1])">
+        <img src="//theme.hstatic.net/1000401164/1000509982/14/block_home_category2.jpg?v=815" alt="BST ÁO PHÔNG">
+      </a>		
+      <div class="caption_banner">
+        <span class="subtitle"></span>
+        <h3>BST ÁO PHÔNG</h3>
+        
+        <a class="button" href="#!danhMuc" ng-click="loadDM(dsDanhMuc[1])">Xem thêm</a>
+                  
+      </div>
+    </div>
+  </div>
+  <div class="col-4 home-banner-pd site-animation">
+    <div class="block-banner-category"> 
+      <a class="link-banner" href="#!danhMuc" ng-click="loadDM(dsDanhMuc[4])">
+        <img  src="https://theme.hstatic.net/1000401164/1000509982/14/block_home_category3.jpg?v=815" alt="BST ÁO PHÔNG">
+      </a>		
+      <div class="caption_banner">
+        <span class="subtitle"></span>
+        <h3>BST BLAZER DÀI TAY</h3>
+        
+        <a class="button" href="#!danhMuc" ng-click="loadDM(dsDanhMuc[4])" >Xem thêm</a>
+                  
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- end nhóm 2 -->
+
+<!-- nhóm 3 -->
+<div class="danhMucSanPham text-center" id="danhMucSanPham"> <h2 class="h2-danhmuc">Sản Phẩm Bán Chạy</h2></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3" ng-repeat="sp in dsSP | limitTo:8:0">
+      <div class="product" ng-click="loadSanPham(sp)">
+        <a href="#!chiTietSanPham">
+          <img src="{{sp.hinhAnh[0]}}" width="100%" alt="Product 1">
+          <p id="product-name">{{sp.tenSanPham}}</p>
+          <p id="price">{{sp.giaBan | number}} VND</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- end nhóm 3 -->
+
+<!-- gthieu về chúng tôi -->
+<section class="about-us" id="about">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <img src="https://theme.hstatic.net/1000401164/1000509982/14/page_banner.jpg?v=815" alt="About Us" class="img-fluid" style="width: 100%;">
+      </div>
+      <div class="col-lg-6">
+        <h2>Về Chúng Tôi</h2>
+        <p>MANDO là thương hiệu thời trang nam dành cho giới trẻ theo phong cách Hàn Quốc. Được thành lập tới nay được 6 năm, MANDO đã và đang dần trở thành một người bạn gần gũi, tin cậy và đầy mới mẻ của giới trẻ Việt trong câu chuyện ăn mặc, với Fanpage Facebook đạt gần 450.000 lượt thích, group fan cứng hơn 18.000 thành viên, kênh Tiktok gần 250.000 lượt folllow.</p>
+        <a href="#!gioiThieu" class="btn btn-primary btn-hover">Tìm Hiểu Thêm</a>
+      </div>
+    </div>
+  </div>
+</section>

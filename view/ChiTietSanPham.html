@@ -1,0 +1,80 @@
+
+    <link rel="stylesheet" type="text/css" href="css/chiTietSanPham.css">
+
+ <div class="container-fluid">
+   
+    <div ng-include="'modun/duongDan.html'"></div>
+
+    <div class="row">
+      <div class="chiTietSanPham col-12 mt-5 bg-primary-subtle d-flex" id="chiTietSanPhamID">
+        <div class="hinhAnhSanPham col-6 d-flex" ng-repeat="sp in dsSP | limitTo:1:vitri">
+          <div class="hinhNho col-3 d-block" >
+            <div class="hinhNho col-12 d-block" ng-repeat="image in sp.hinhAnh " ng-click="showLargeImage($index)">
+              <a class="image-link"  >
+                <img src="{{image}}" width="85%" alt="" class="image-2">
+         
+              </a>
+           <p></p>
+            </div>
+          </div>
+          <div class="hinhLon col-9">
+            <div class="hinhV" ng-repeat="image in sp.hinhAnh" ng-show="activeSection === $index">
+              <img src="{{image}}" alt="2" width="95%">
+            </div>
+          </div>
+        </div>
+       
+        <div class="thongTinSanPham col-6" >
+            <h4 >{{tenSanPham}}</h4>
+            <span class="line bg-dark-subtle" ></span>
+            <div class="product-price" id="price-preview"><span class="pro-sale">-30%</span><span class="pro-price" ng-model="giaBanThem">{{giaBan|currency:"VND ":0}}</span><del>{{giaGoc|currency:"VND ":0}}</del></div> 
+            <span class="line bg-dark-subtle" ></span>
+            <div class="header">Màu Sắc:   </div>
+            <div class="btn-group">
+              <div class="btn-group-item">
+                <input type="radio" name="brand-color" id="brand-color-apple" value="den" ng-model="selectedColor" ng-click="setSelectedColor('Trắng')">
+                <label for="brand-color-apple">Trắng</label>
+              </div>
+              <div class="btn-group-item">
+                <input type="radio" name="brand-color" id="brand-color-samsung" value="xanh" ng-model="selectedColor" ng-click="setSelectedColor('Đen')">
+                <label for="brand-color-samsung">Đen</label>
+              </div>
+            </div>
+            
+            <span class="line bg-dark-subtle" ></span>
+            <div class="header">Size:   </div>
+            <div class="btn-group">
+              <div class="btn-group-item">
+                <input type="radio" name="brand-size" id="brand-size-apple" value="M" ng-model="selectedSize" ng-click="setSelectedSize('M')">
+                <label for="brand-size-apple">M</label>
+              </div>
+              <div class="btn-group-item">
+                <input type="radio" name="brand-size" id="brand-size-samsung" value="L" ng-model="selectedSize" ng-click="setSelectedSize('L')">
+                <label for="brand-size-samsung">L</label>
+              </div>
+            </div>
+            <span class="line bg-dark-subtle" ></span>
+            <div class="header">Số lượng:</div>
+            <div class="quantity-controls">
+              <button class="quantity-btn" ng-click="decreaseQuantity()">-</button>
+              <input type="number" class="quantity-input" ng-model="quantity" min="1" max="99" readonly>
+              <button class="quantity-btn" ng-click="increaseQuantity()">+</button>
+            </div>
+                <span class="line bg-dark-subtle" ></span> <br>
+          <button class="add-to-cart-btn" ng-click="themVaoGioHang()">
+               Thêm vào giỏ hàng
+           <div class="add-to-cart-progress"></div>
+            </button> 
+            <div class="description-productdetail">
+              <br><p>Mã SP :{{id}}</p><p>Màu sắc:&nbsp; Xanh, đen</p><p>Họa tiết: Thêu chữ M</p><p>Chất liệu: Dạ ép phối tay da&nbsp;</p><p>Size: M, L, XL, XXL</p><p><img src="https://file.hstatic.net/1000401164/file/8ca099ed706d8e33d77c_ca3b7ad5ace14c719a51b5845afb87c0_grande.jpg"></p><p>Để đặt hàng sản phẩm trên website cậu làm theo hướng dẫn sau nha</p><p>Bước 1: Chọn màu và size phù hợp với bạn, thêm vào giỏ hàng</p><p>Bước 2: Tiến hành thanh toán&nbsp;</p><p>- Điền đẩy đủ thông tin: tên người nhận, số điện thoại, địa chỉ cụ thể khi nhận hàng</p><p>- Chọn tiếp tục: chọn hình thức thanh toán và bấm hoàn thành</p><p><img src="https://file.hstatic.net/1000401164/file/chinh-sach-khach-hang_a88ecec69cd447389252a7eb2c91e5b7_grande.png"></p><p><strong>Khi nhận sản phẩm cậu hãy kiểm tra thật kĩ sản phẩm các cậu nhé, nếu có vấn đề gì với sản phẩm hãy liên hệ lại với chúng tớ ngay nha</strong></p><ul><li><strong>LIÊN HỆ CHĂM SÓC KHÁCH HÀNG</strong><ul><li>Email: cskh.thoitrangmando@gmail.com</li><li>Hotline : 097 8461 032 Hoặc 0978 419 935</li><li>FB MANDO :<a href="https://www.facebook.com/Mandofashion.vn">https://www.facebook.com/Mandofashion.vn</a></li></ul></li></ul>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
+ 
+  
+<!-- foooter -->
+<br>
+

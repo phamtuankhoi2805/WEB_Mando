@@ -1,0 +1,70 @@
+
+    <link rel="stylesheet" type="text/css" href="css/gioHang.css">
+
+ <div class="container-fluid">
+  
+    
+    <br> <br> 
+     <!-- duong dẫn menu -->
+     <div ng-include="'modun/duongDan.html'"></div>
+    <!-- giỏ hàng --> 
+    <div class="row pd-page">
+			<div class="col-md-12 col-xs-12 heading-page">
+				<div class="header-page"> <br> <br>
+					<h1>Giỏ hàng của bạn</h1>
+          <p class="count-cart" ng-if="soLuong > 0">Có <span>{{soLuong}} sản phẩm</span> trong giỏ hàng</p>
+          <p class="no-items" ng-if="soLuong === 0">Không có sản phẩm nào trong giỏ hàng</p>
+				</div>
+			</div>
+    <div class="col-md-12 col-xs-12 wrapbox-content-cart">
+<table class="table" ng-if="cart.length > 0">
+  <thead>
+    <tr>
+      <th>Sản phẩm</th>
+      <th>Giá</th>
+      <th>Số lượng</th>
+      <th>Tổng</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in cart">
+      <td>
+        <div class="d-flex align-items-center">
+          <img src="{{item.hinhAnh}}" alt="{{item.tenSP}}" class="me-3" style="width: 80px;">
+          <div>
+            <h5 class="mb-1">{{item.tenSP}}</h5>
+        
+          </div>
+        </div>
+      </td>
+      <td>{{item.giaSP | currency:"":0}}</td>
+      <td>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-outline-secondary btn-sm me-2" ng-click="updateQuantity(item, -1)">-</button>
+          <input type="text" class="form-control form-control-sm w-auto" ng-model="item.quantity">
+          <button class="btn btn-outline-secondary btn-sm ms-2" ng-click="updateQuantity(item, 1)">+</button>
+        </div>
+      </td>
+      <td>{{item.giaSP * item.quantity | currency:"":0}}</td>
+      <td>
+        <button class="btn btn-outline-danger btn-sm" ng-click="xoaSanPham(item)">Xóa</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  <div class="d-flex justify-content-between align-items-center mt-3" ng-if="cart.length > 0">
+    <h4 class="mb-0">Tổng tiền: <span class="text-primary fw-bold">{{totalPrice | currency:"":0}}</span> VND</h4>
+    <div>
+      <a href="#!" class="btn btn-outline-secondary btn-xl me-2">Tiếp tục mua hàng</a>
+      <button class="btn btn-primary btn-xl "data-bs-toggle="modal" data-bs-target="#exampleModal" ng-if="checkDangNhap" ng-click="thanhToan()">Thanh toán</button>
+      <button class="btn btn-primary btn-xl "data-bs-toggle="modal" data-bs-target="#exampleModal" ng-if="!checkDangNhap" ng-click="dangNhapThanhToan()">đăng nhập để thanh toán</button>
+    </div>
+  </div>
+</div>
+<!-- Đăng Nhập-->
+
+		
+<!-- foooter -->
+<br>
+

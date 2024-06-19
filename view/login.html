@@ -1,0 +1,47 @@
+
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+  <!-- Đăng nhập -->
+ 
+<div class="container-fluid" style="width: 100%; margin-top: 100px; ">
+
+
+  <div class="container mt-5">
+    <!-- Form đăng nhập -->
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center mb-4">Đăng nhập</h2>
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="loginPhone" class="form-label">Số điện thoại</label>
+                <input type="tel" class="form-control" id="loginPhone" ng-model="phoneNumber" required>
+              </div>
+              <div class="alert alert-danger" ng-show="loginFailed">
+                Thông tin đăng nhập không chính xác.
+              </div>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" ng-model="password" id="loginPassword" required>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Nhớ mật khẩu</label>
+              </div>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary" ng-click="login()">Đăng nhập</button>
+              </div>
+          
+            </form>
+            <p class="text-center mt-3">
+              <a href="#!quenPass" class="forgot-password-btn">Quên mật khẩu?</a>
+            </p>
+            <p class="text-center mt-3">Chưa có tài khoản? <a href="#!dangKy" class="register-btn">Đăng ký</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
