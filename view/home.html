@@ -31,7 +31,7 @@
           <div class="carousel-item active">
             <div class="row">
               <div class="col-4 position-relative" ng-repeat="dm in dsDanhMuc | limitTo:limitDM:startDM">
-                <a href="#!danhMuc" ng-click="loadDM(dm)">
+                <a href="#!danhMuc" ng-click="loadDM(dm)" >
                   <img src="{{dm.hinhAnh}}" class="d-block w-100" alt="Product {{$index+1}}">
                 </a>
                 <p>{{dm.tenDanhMuc}}</p>
@@ -62,7 +62,7 @@
   <div class="row">
     <div class="col-3 position-relative" ng-repeat="sp in dsSP | limitTo:4:0">
       <div class="product" ng-click="loadSanPham(sp)">
-        <a href="#!chiTietSanPham">
+        <a href="#!chiTietSanPham/{{ sp.id }}">
           <img src="{{sp.hinhAnh[0]}}" style="width: 100%;" alt="Product 1">
           <p id="product-name">{{sp.tenSanPham}}</p>
           <p id="price">{{sp.giaBan | number}} VND</p>

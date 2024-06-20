@@ -5,7 +5,6 @@ $(document).ready(function () {
 });
 
 
-
 var app = angular.module('myApp', ['ngRoute']);
 app.config(function($routeProvider){
   $routeProvider
@@ -23,7 +22,11 @@ app.config(function($routeProvider){
     })
     .when('/chiTietSanPham', {
       templateUrl: 'chiTietSanPham.html',
-
+      
+    })
+    .when('/chiTietSanPham/:id', {
+      templateUrl: 'chiTietSanPham.html',
+      
     })
     .when('/gioHang', {
       templateUrl: 'gioHang.html',
